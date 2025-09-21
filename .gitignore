@@ -1,0 +1,69 @@
+# ======================
+# Vivado 관련
+# ======================
+*.jou
+*.log
+*.str
+*.zip
+*.tmp
+*.backup*
+*.rpt
+*.dmp
+*.xml
+
+# Vivado 빌드 결과 디렉토리
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+*.Xil/
+*.srcs/sources_1/ip/
+*.srcs/sources_1/bd/*/ip/*
+
+# Vivado 자동 생성 파일
+*.xpr
+*.xsa
+*.sdk
+*.wcfg
+*.ltx
+
+# ======================
+# Vitis 관련
+# ======================
+.metadata/
+.ide/
+.vscode/
+.settings/
+Debug/
+Release/
+bin/
+obj/
+*.o
+*.elf
+*.map
+*.log
+*.jou
+
+# Vitis 자동 생성 파일
+*.xsa
+*.launch
+*.gdbinit
+*.gdb
+
+# ======================
+# 공통 (C언어 / 일반)
+# ======================
+*.swp
+*.swo
+*.DS_Store
+*.exe
+*.out
+*.a
+*.so
+
+# ======================
+# 사용자 환경 파일 제외
+# ======================
+*.user
+*.crash
