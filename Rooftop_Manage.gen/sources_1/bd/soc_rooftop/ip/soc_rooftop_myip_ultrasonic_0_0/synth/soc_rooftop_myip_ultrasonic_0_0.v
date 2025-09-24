@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:myip_ultrasonic:1.0
-// IP Revision: 2
+// IP Revision: 3
 
 (* X_CORE_INFO = "myip_ultrasonic,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "soc_rooftop_myip_ultrasonic_0_0,myip_ultrasonic,{}" *)

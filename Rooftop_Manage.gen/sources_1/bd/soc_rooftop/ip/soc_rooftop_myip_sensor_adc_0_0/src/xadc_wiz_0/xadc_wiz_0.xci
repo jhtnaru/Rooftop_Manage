@@ -61,7 +61,7 @@
         "VCCPAUX_ALARM_UPPER": [ { "value": "1.8", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "VCCDDRO_ALARM_LOWER": [ { "value": "1.15", "resolve_type": "user", "format": "float", "usage": "all" } ],
         "VCCDDRO_ALARM_UPPER": [ { "value": "1.25", "resolve_type": "user", "format": "float", "usage": "all" } ],
-        "SINGLE_CHANNEL_SELECTION": [ { "value": "TEMPERATURE", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
+        "SINGLE_CHANNEL_SELECTION": [ { "value": "VAUXP6_VAUXN6", "value_src": "user", "resolve_type": "user", "usage": "all" } ],
         "SINGLE_CHANNEL_ENABLE_CALIBRATION": [ { "value": "true", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "BIPOLAR_OPERATION": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],
         "SINGLE_CHANNEL_ACQUISITION_TIME": [ { "value": "false", "resolve_type": "user", "format": "bool", "usage": "all" } ],

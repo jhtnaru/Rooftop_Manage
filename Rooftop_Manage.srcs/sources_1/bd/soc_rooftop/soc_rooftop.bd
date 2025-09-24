@@ -53,26 +53,39 @@
       "microblaze_riscv_0_axi_intc": "",
       "microblaze_riscv_0_xlconcat": "",
       "mdm_1": "",
-      "axi_uartlite_0": "",
       "axi_btn_gpio_0": "",
+      "myip_servo_0": "",
+      "myip_servo_1": "",
+      "myip_servo_2": "",
+      "myip_servo_3": "",
+      "myip_servo_4": "",
+      "myip_servo_5": "",
+      "myip_servo_6": "",
+      "myip_stepper_0": "",
+      "myip_fan_0": "",
       "myip_ultrasonic_0": "",
       "myip_ultrasonic_1": "",
       "myip_rtc_read_0": "",
       "myip_dht11_0": "",
       "myip_sensor_adc_0": "",
       "myip_sensor_dgt_0": "",
-      "myip_fan_0": "",
       "myip_iic_txtlcd_0": "",
-      "myip_servo180_0": "",
-      "myip_servo180_1": "",
-      "myip_servo180_2": "",
-      "myip_servo180_3": "",
-      "myip_servo180_4": "",
-      "myip_servo180_5": "",
-      "myip_servo180_6": "",
-      "myip_stepper_0": ""
+      "axi_uartlite_0": ""
     },
     "interface_ports": {
+      "push_buttons_4bits": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
+        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
+        "port_maps": {
+          "TRI_I": {
+            "physical_name": "push_buttons_4bits_tri_i",
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
       "usb_uart": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
@@ -85,19 +98,6 @@
           "TxD": {
             "physical_name": "usb_uart_txd",
             "direction": "O"
-          }
-        }
-      },
-      "push_buttons_4bits": {
-        "mode": "Master",
-        "vlnv_bus_definition": "xilinx.com:interface:gpio:1.0",
-        "vlnv": "xilinx.com:interface:gpio_rtl:1.0",
-        "port_maps": {
-          "TRI_I": {
-            "physical_name": "push_buttons_4bits_tri_i",
-            "direction": "I",
-            "left": "3",
-            "right": "0"
           }
         }
       }
@@ -139,6 +139,37 @@
             "value": "0.0"
           }
         }
+      },
+      "servo_0": {
+        "direction": "O"
+      },
+      "servo_1": {
+        "direction": "O"
+      },
+      "servo_2": {
+        "direction": "O"
+      },
+      "servo_3": {
+        "direction": "O"
+      },
+      "servo_4": {
+        "direction": "O"
+      },
+      "servo_5": {
+        "direction": "O"
+      },
+      "servo_6": {
+        "direction": "O"
+      },
+      "step_out_0": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      },
+      "fan_out_0": {
+        "direction": "O",
+        "left": "1",
+        "right": "0"
       },
       "ultra_echo_0": {
         "direction": "I"
@@ -213,42 +244,11 @@
       "sensor_0": {
         "direction": "I"
       },
-      "fan_out_0": {
-        "direction": "O",
-        "left": "1",
-        "right": "0"
-      },
       "scl_0": {
         "direction": "O"
       },
       "sda_0": {
         "direction": "O"
-      },
-      "servo_0": {
-        "direction": "O"
-      },
-      "servo_1": {
-        "direction": "O"
-      },
-      "servo_2": {
-        "direction": "O"
-      },
-      "servo_3": {
-        "direction": "O"
-      },
-      "servo_4": {
-        "direction": "O"
-      },
-      "servo_5": {
-        "direction": "O"
-      },
-      "servo_6": {
-        "direction": "O"
-      },
-      "step_out_0": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
       }
     },
     "components": {
@@ -393,8 +393,8 @@
           "dlmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "14",
-            "xci_name": "soc_rooftop_dlmb_v10_1",
-            "xci_path": "ip/soc_rooftop_dlmb_v10_1/soc_rooftop_dlmb_v10_1.xci",
+            "xci_name": "soc_rooftop_dlmb_v10_0",
+            "xci_path": "ip/soc_rooftop_dlmb_v10_0/soc_rooftop_dlmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_v10",
             "interface_ports": {
               "LMB_M": {
@@ -409,8 +409,8 @@
           "ilmb_v10": {
             "vlnv": "xilinx.com:ip:lmb_v10:3.0",
             "ip_revision": "14",
-            "xci_name": "soc_rooftop_ilmb_v10_1",
-            "xci_path": "ip/soc_rooftop_ilmb_v10_1/soc_rooftop_ilmb_v10_1.xci",
+            "xci_name": "soc_rooftop_ilmb_v10_0",
+            "xci_path": "ip/soc_rooftop_ilmb_v10_0/soc_rooftop_ilmb_v10_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_v10",
             "interface_ports": {
               "LMB_M": {
@@ -425,8 +425,8 @@
           "dlmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "25",
-            "xci_name": "soc_rooftop_dlmb_bram_if_cntlr_1",
-            "xci_path": "ip/soc_rooftop_dlmb_bram_if_cntlr_1/soc_rooftop_dlmb_bram_if_cntlr_1.xci",
+            "xci_name": "soc_rooftop_dlmb_bram_if_cntlr_0",
+            "xci_path": "ip/soc_rooftop_dlmb_bram_if_cntlr_0/soc_rooftop_dlmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr",
             "parameters": {
               "C_ECC": {
@@ -447,8 +447,8 @@
           "ilmb_bram_if_cntlr": {
             "vlnv": "xilinx.com:ip:lmb_bram_if_cntlr:4.0",
             "ip_revision": "25",
-            "xci_name": "soc_rooftop_ilmb_bram_if_cntlr_1",
-            "xci_path": "ip/soc_rooftop_ilmb_bram_if_cntlr_1/soc_rooftop_ilmb_bram_if_cntlr_1.xci",
+            "xci_name": "soc_rooftop_ilmb_bram_if_cntlr_0",
+            "xci_path": "ip/soc_rooftop_ilmb_bram_if_cntlr_0/soc_rooftop_ilmb_bram_if_cntlr_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr",
             "parameters": {
               "C_ECC": {
@@ -459,8 +459,8 @@
           "lmb_bram": {
             "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
             "ip_revision": "9",
-            "xci_name": "soc_rooftop_lmb_bram_1",
-            "xci_path": "ip/soc_rooftop_lmb_bram_1/soc_rooftop_lmb_bram_1.xci",
+            "xci_name": "soc_rooftop_lmb_bram_0",
+            "xci_path": "ip/soc_rooftop_lmb_bram_0/soc_rooftop_lmb_bram_0.xci",
             "inst_hier_path": "microblaze_riscv_0_local_memory/lmb_bram",
             "parameters": {
               "Memory_Type": {
@@ -2798,9 +2798,139 @@
       "mdm_1": {
         "vlnv": "xilinx.com:ip:mdm_riscv:1.0",
         "ip_revision": "3",
-        "xci_name": "soc_rooftop_mdm_1_1",
-        "xci_path": "ip/soc_rooftop_mdm_1_1/soc_rooftop_mdm_1_1.xci",
+        "xci_name": "soc_rooftop_mdm_1_0",
+        "xci_path": "ip/soc_rooftop_mdm_1_0/soc_rooftop_mdm_1_0.xci",
         "inst_hier_path": "mdm_1"
+      },
+      "axi_btn_gpio_0": {
+        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
+        "ip_revision": "35",
+        "xci_name": "soc_rooftop_axi_gpio_0_0",
+        "xci_path": "ip/soc_rooftop_axi_gpio_0_0/soc_rooftop_axi_gpio_0_0.xci",
+        "inst_hier_path": "axi_btn_gpio_0",
+        "parameters": {
+          "C_INTERRUPT_PRESENT": {
+            "value": "1"
+          },
+          "GPIO_BOARD_INTERFACE": {
+            "value": "push_buttons_4bits"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "myip_servo_0": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_0_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_0_0/soc_rooftop_myip_servo_0_0.xci",
+        "inst_hier_path": "myip_servo_0"
+      },
+      "myip_servo_1": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_1_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_1_0/soc_rooftop_myip_servo_1_0.xci",
+        "inst_hier_path": "myip_servo_1"
+      },
+      "myip_servo_2": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_2_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_2_0/soc_rooftop_myip_servo_2_0.xci",
+        "inst_hier_path": "myip_servo_2"
+      },
+      "myip_servo_3": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_3_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_3_0/soc_rooftop_myip_servo_3_0.xci",
+        "inst_hier_path": "myip_servo_3"
+      },
+      "myip_servo_4": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_4_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_4_0/soc_rooftop_myip_servo_4_0.xci",
+        "inst_hier_path": "myip_servo_4"
+      },
+      "myip_servo_5": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_5_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_5_0/soc_rooftop_myip_servo_5_0.xci",
+        "inst_hier_path": "myip_servo_5"
+      },
+      "myip_servo_6": {
+        "vlnv": "user.org:user:myip_servo:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_servo_6_0",
+        "xci_path": "ip/soc_rooftop_myip_servo_6_0/soc_rooftop_myip_servo_6_0.xci",
+        "inst_hier_path": "myip_servo_6"
+      },
+      "myip_stepper_0": {
+        "vlnv": "user.org:user:myip_stepper:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_stepper_0_1",
+        "xci_path": "ip/soc_rooftop_myip_stepper_0_1/soc_rooftop_myip_stepper_0_1.xci",
+        "inst_hier_path": "myip_stepper_0"
+      },
+      "myip_fan_0": {
+        "vlnv": "user.org:user:myip_fan:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_fan_0_1",
+        "xci_path": "ip/soc_rooftop_myip_fan_0_1/soc_rooftop_myip_fan_0_1.xci",
+        "inst_hier_path": "myip_fan_0"
+      },
+      "myip_ultrasonic_0": {
+        "vlnv": "user.org:user:myip_ultrasonic:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_ultrasonic_0_0",
+        "xci_path": "ip/soc_rooftop_myip_ultrasonic_0_0/soc_rooftop_myip_ultrasonic_0_0.xci",
+        "inst_hier_path": "myip_ultrasonic_0"
+      },
+      "myip_ultrasonic_1": {
+        "vlnv": "user.org:user:myip_ultrasonic:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_ultrasonic_1_0",
+        "xci_path": "ip/soc_rooftop_myip_ultrasonic_1_0/soc_rooftop_myip_ultrasonic_1_0.xci",
+        "inst_hier_path": "myip_ultrasonic_1"
+      },
+      "myip_rtc_read_0": {
+        "vlnv": "user.org:user:myip_rtc_read:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_rtc_read_0_0",
+        "xci_path": "ip/soc_rooftop_myip_rtc_read_0_0/soc_rooftop_myip_rtc_read_0_0.xci",
+        "inst_hier_path": "myip_rtc_read_0"
+      },
+      "myip_dht11_0": {
+        "vlnv": "user.org:user:myip_dht11:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_dht11_0_0",
+        "xci_path": "ip/soc_rooftop_myip_dht11_0_0/soc_rooftop_myip_dht11_0_0.xci",
+        "inst_hier_path": "myip_dht11_0"
+      },
+      "myip_sensor_adc_0": {
+        "vlnv": "user.org:user:myip_sensor_adc:1.0",
+        "ip_revision": "2",
+        "xci_name": "soc_rooftop_myip_sensor_adc_0_0",
+        "xci_path": "ip/soc_rooftop_myip_sensor_adc_0_0/soc_rooftop_myip_sensor_adc_0_0.xci",
+        "inst_hier_path": "myip_sensor_adc_0"
+      },
+      "myip_sensor_dgt_0": {
+        "vlnv": "user.org:user:myip_sensor_dgt:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_sensor_dgt_0_0",
+        "xci_path": "ip/soc_rooftop_myip_sensor_dgt_0_0/soc_rooftop_myip_sensor_dgt_0_0.xci",
+        "inst_hier_path": "myip_sensor_dgt_0"
+      },
+      "myip_iic_txtlcd_0": {
+        "vlnv": "user.org:user:myip_iic_txtlcd:1.0",
+        "ip_revision": "3",
+        "xci_name": "soc_rooftop_myip_iic_txtlcd_0_0",
+        "xci_path": "ip/soc_rooftop_myip_iic_txtlcd_0_0/soc_rooftop_myip_iic_txtlcd_0_0.xci",
+        "inst_hier_path": "myip_iic_txtlcd_0"
       },
       "axi_uartlite_0": {
         "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
@@ -2816,136 +2946,6 @@
             "value": "true"
           }
         }
-      },
-      "axi_btn_gpio_0": {
-        "vlnv": "xilinx.com:ip:axi_gpio:2.0",
-        "ip_revision": "35",
-        "xci_name": "soc_rooftop_axi_gpio_0_1",
-        "xci_path": "ip/soc_rooftop_axi_gpio_0_1/soc_rooftop_axi_gpio_0_1.xci",
-        "inst_hier_path": "axi_btn_gpio_0",
-        "parameters": {
-          "C_INTERRUPT_PRESENT": {
-            "value": "1"
-          },
-          "GPIO_BOARD_INTERFACE": {
-            "value": "push_buttons_4bits"
-          },
-          "USE_BOARD_FLOW": {
-            "value": "true"
-          }
-        }
-      },
-      "myip_ultrasonic_0": {
-        "vlnv": "user.org:user:myip_ultrasonic:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_ultrasonic_0_0",
-        "xci_path": "ip/soc_rooftop_myip_ultrasonic_0_0/soc_rooftop_myip_ultrasonic_0_0.xci",
-        "inst_hier_path": "myip_ultrasonic_0"
-      },
-      "myip_ultrasonic_1": {
-        "vlnv": "user.org:user:myip_ultrasonic:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_ultrasonic_1_0",
-        "xci_path": "ip/soc_rooftop_myip_ultrasonic_1_0/soc_rooftop_myip_ultrasonic_1_0.xci",
-        "inst_hier_path": "myip_ultrasonic_1"
-      },
-      "myip_rtc_read_0": {
-        "vlnv": "user.org:user:myip_rtc_read:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_rtc_read_0_0",
-        "xci_path": "ip/soc_rooftop_myip_rtc_read_0_0/soc_rooftop_myip_rtc_read_0_0.xci",
-        "inst_hier_path": "myip_rtc_read_0"
-      },
-      "myip_dht11_0": {
-        "vlnv": "user.org:user:myip_dht11:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_dht11_0_0",
-        "xci_path": "ip/soc_rooftop_myip_dht11_0_0/soc_rooftop_myip_dht11_0_0.xci",
-        "inst_hier_path": "myip_dht11_0"
-      },
-      "myip_sensor_adc_0": {
-        "vlnv": "user.org:user:myip_sensor_adc:1.0",
-        "ip_revision": "6",
-        "xci_name": "soc_rooftop_myip_sensor_adc_0_0",
-        "xci_path": "ip/soc_rooftop_myip_sensor_adc_0_0/soc_rooftop_myip_sensor_adc_0_0.xci",
-        "inst_hier_path": "myip_sensor_adc_0"
-      },
-      "myip_sensor_dgt_0": {
-        "vlnv": "user.org:user:myip_sensor_dgt:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_sensor_dgt_0_0",
-        "xci_path": "ip/soc_rooftop_myip_sensor_dgt_0_0/soc_rooftop_myip_sensor_dgt_0_0.xci",
-        "inst_hier_path": "myip_sensor_dgt_0"
-      },
-      "myip_fan_0": {
-        "vlnv": "user.org:user:myip_fan:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_fan_0_0",
-        "xci_path": "ip/soc_rooftop_myip_fan_0_0/soc_rooftop_myip_fan_0_0.xci",
-        "inst_hier_path": "myip_fan_0"
-      },
-      "myip_iic_txtlcd_0": {
-        "vlnv": "user.org:user:myip_iic_txtlcd:1.0",
-        "ip_revision": "3",
-        "xci_name": "soc_rooftop_myip_iic_txtlcd_0_0",
-        "xci_path": "ip/soc_rooftop_myip_iic_txtlcd_0_0/soc_rooftop_myip_iic_txtlcd_0_0.xci",
-        "inst_hier_path": "myip_iic_txtlcd_0"
-      },
-      "myip_servo180_0": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_0_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_0_0/soc_rooftop_myip_servo180_0_0.xci",
-        "inst_hier_path": "myip_servo180_0"
-      },
-      "myip_servo180_1": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_1_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_1_0/soc_rooftop_myip_servo180_1_0.xci",
-        "inst_hier_path": "myip_servo180_1"
-      },
-      "myip_servo180_2": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_2_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_2_0/soc_rooftop_myip_servo180_2_0.xci",
-        "inst_hier_path": "myip_servo180_2"
-      },
-      "myip_servo180_3": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_3_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_3_0/soc_rooftop_myip_servo180_3_0.xci",
-        "inst_hier_path": "myip_servo180_3"
-      },
-      "myip_servo180_4": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_4_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_4_0/soc_rooftop_myip_servo180_4_0.xci",
-        "inst_hier_path": "myip_servo180_4"
-      },
-      "myip_servo180_5": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_5_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_5_0/soc_rooftop_myip_servo180_5_0.xci",
-        "inst_hier_path": "myip_servo180_5"
-      },
-      "myip_servo180_6": {
-        "vlnv": "user.org:user:myip_servo180:1.0",
-        "ip_revision": "5",
-        "xci_name": "soc_rooftop_myip_servo180_6_0",
-        "xci_path": "ip/soc_rooftop_myip_servo180_6_0/soc_rooftop_myip_servo180_6_0.xci",
-        "inst_hier_path": "myip_servo180_6"
-      },
-      "myip_stepper_0": {
-        "vlnv": "user.org:user:myip_stepper:1.0",
-        "ip_revision": "2",
-        "xci_name": "soc_rooftop_myip_stepper_0_1",
-        "xci_path": "ip/soc_rooftop_myip_stepper_0_1/soc_rooftop_myip_stepper_0_1.xci",
-        "inst_hier_path": "myip_stepper_0"
       }
     },
     "interface_nets": {
@@ -2982,97 +2982,97 @@
       "microblaze_riscv_0_axi_periph_M03_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M03_AXI",
-          "myip_ultrasonic_0/S00_AXI"
+          "myip_servo_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M04_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M04_AXI",
-          "myip_ultrasonic_1/S00_AXI"
+          "myip_servo_1/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M05_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M05_AXI",
-          "myip_rtc_read_0/S00_AXI"
+          "myip_servo_2/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M06_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M06_AXI",
-          "myip_dht11_0/S00_AXI"
+          "myip_servo_3/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M07_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M07_AXI",
-          "myip_sensor_adc_0/S00_AXI"
+          "myip_servo_4/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M08_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M08_AXI",
-          "myip_sensor_dgt_0/S00_AXI"
+          "myip_servo_5/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M09_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M09_AXI",
-          "myip_stepper_0/S00_AXI"
+          "myip_servo_6/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M10_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M10_AXI",
-          "myip_fan_0/S00_AXI"
+          "myip_stepper_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M11_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M11_AXI",
-          "myip_iic_txtlcd_0/S00_AXI"
+          "myip_fan_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M12_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M12_AXI",
-          "myip_servo180_0/S00_AXI"
+          "myip_ultrasonic_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M13_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M13_AXI",
-          "myip_servo180_1/S00_AXI"
+          "myip_ultrasonic_1/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M14_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M14_AXI",
-          "myip_servo180_2/S00_AXI"
+          "myip_rtc_read_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M15_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M15_AXI",
-          "myip_servo180_3/S00_AXI"
+          "myip_dht11_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M16_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M16_AXI",
-          "myip_servo180_4/S00_AXI"
+          "myip_sensor_adc_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M17_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M17_AXI",
-          "myip_servo180_5/S00_AXI"
+          "myip_sensor_dgt_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_axi_periph_M18_AXI": {
         "interface_ports": [
           "microblaze_riscv_0_axi_periph/M18_AXI",
-          "myip_servo180_6/S00_AXI"
+          "myip_iic_txtlcd_0/S00_AXI"
         ]
       },
       "microblaze_riscv_0_debug": {
@@ -3122,12 +3122,6 @@
       "axi_btn_gpio_0_ip2intc_irpt": {
         "ports": [
           "axi_btn_gpio_0/ip2intc_irpt",
-          "microblaze_riscv_0_xlconcat/In1"
-        ]
-      },
-      "axi_uartlite_0_interrupt": {
-        "ports": [
-          "axi_uartlite_0/interrupt",
           "microblaze_riscv_0_xlconcat/In0"
         ]
       },
@@ -3148,42 +3142,42 @@
           "microblaze_riscv_0_axi_intc/s_axi_aclk",
           "microblaze_riscv_0_axi_intc/processor_clk",
           "microblaze_riscv_0_local_memory/LMB_Clk",
-          "axi_uartlite_0/s_axi_aclk",
           "microblaze_riscv_0_axi_periph/M01_ACLK",
           "axi_btn_gpio_0/s_axi_aclk",
           "microblaze_riscv_0_axi_periph/M02_ACLK",
-          "myip_ultrasonic_0/s00_axi_aclk",
+          "myip_servo_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M03_ACLK",
-          "myip_ultrasonic_1/s00_axi_aclk",
+          "myip_servo_1/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M04_ACLK",
-          "myip_rtc_read_0/s00_axi_aclk",
+          "myip_servo_2/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M05_ACLK",
-          "myip_dht11_0/s00_axi_aclk",
+          "myip_servo_3/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M06_ACLK",
-          "myip_sensor_adc_0/s00_axi_aclk",
+          "myip_servo_4/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M07_ACLK",
-          "myip_sensor_dgt_0/s00_axi_aclk",
+          "myip_servo_5/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M08_ACLK",
+          "myip_servo_6/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M09_ACLK",
-          "myip_fan_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M10_ACLK",
-          "myip_iic_txtlcd_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M11_ACLK",
+          "myip_stepper_0/s00_axi_aclk",
+          "myip_fan_0/s00_axi_aclk",
+          "myip_ultrasonic_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M12_ACLK",
+          "myip_ultrasonic_1/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M13_ACLK",
+          "myip_rtc_read_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M14_ACLK",
+          "myip_dht11_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M15_ACLK",
+          "myip_sensor_adc_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M16_ACLK",
+          "myip_sensor_dgt_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M17_ACLK",
+          "myip_iic_txtlcd_0/s00_axi_aclk",
           "microblaze_riscv_0_axi_periph/M18_ACLK",
-          "myip_servo180_0/s00_axi_aclk",
-          "myip_servo180_1/s00_axi_aclk",
-          "myip_servo180_2/s00_axi_aclk",
-          "myip_servo180_3/s00_axi_aclk",
-          "myip_servo180_4/s00_axi_aclk",
-          "myip_servo180_5/s00_axi_aclk",
-          "myip_servo180_6/s00_axi_aclk",
-          "myip_stepper_0/s00_axi_aclk"
+          "axi_uartlite_0/s_axi_aclk"
         ]
       },
       "microblaze_riscv_0_intr": {
@@ -3222,45 +3216,45 @@
           "rtc_rst_0"
         ]
       },
-      "myip_servo180_0_servo": {
+      "myip_servo_0_servo": {
         "ports": [
-          "myip_servo180_0/servo",
+          "myip_servo_0/servo",
           "servo_0"
         ]
       },
-      "myip_servo180_1_servo": {
+      "myip_servo_1_servo": {
         "ports": [
-          "myip_servo180_1/servo",
+          "myip_servo_1/servo",
           "servo_1"
         ]
       },
-      "myip_servo180_2_servo": {
+      "myip_servo_2_servo": {
         "ports": [
-          "myip_servo180_2/servo",
+          "myip_servo_2/servo",
           "servo_2"
         ]
       },
-      "myip_servo180_3_servo": {
+      "myip_servo_3_servo": {
         "ports": [
-          "myip_servo180_3/servo",
+          "myip_servo_3/servo",
           "servo_3"
         ]
       },
-      "myip_servo180_4_servo": {
+      "myip_servo_4_servo": {
         "ports": [
-          "myip_servo180_4/servo",
+          "myip_servo_4/servo",
           "servo_4"
         ]
       },
-      "myip_servo180_5_servo": {
+      "myip_servo_5_servo": {
         "ports": [
-          "myip_servo180_5/servo",
+          "myip_servo_5/servo",
           "servo_5"
         ]
       },
-      "myip_servo180_6_servo": {
+      "myip_servo_6_servo": {
         "ports": [
-          "myip_servo180_6/servo",
+          "myip_servo_6/servo",
           "servo_6"
         ]
       },
@@ -3302,42 +3296,42 @@
           "microblaze_riscv_0_axi_periph/S00_ARESETN",
           "microblaze_riscv_0_axi_periph/M00_ARESETN",
           "microblaze_riscv_0_axi_intc/s_axi_aresetn",
-          "axi_uartlite_0/s_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M01_ARESETN",
           "axi_btn_gpio_0/s_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M02_ARESETN",
-          "myip_ultrasonic_0/s00_axi_aresetn",
+          "myip_servo_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M03_ARESETN",
-          "myip_ultrasonic_1/s00_axi_aresetn",
+          "myip_servo_1/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M04_ARESETN",
-          "myip_rtc_read_0/s00_axi_aresetn",
+          "myip_servo_2/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M05_ARESETN",
-          "myip_dht11_0/s00_axi_aresetn",
+          "myip_servo_3/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M06_ARESETN",
-          "myip_sensor_adc_0/s00_axi_aresetn",
+          "myip_servo_4/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M07_ARESETN",
-          "myip_sensor_dgt_0/s00_axi_aresetn",
+          "myip_servo_5/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M08_ARESETN",
+          "myip_servo_6/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M09_ARESETN",
-          "myip_fan_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M10_ARESETN",
-          "myip_iic_txtlcd_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M11_ARESETN",
+          "myip_stepper_0/s00_axi_aresetn",
+          "myip_fan_0/s00_axi_aresetn",
+          "myip_ultrasonic_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M12_ARESETN",
+          "myip_ultrasonic_1/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M13_ARESETN",
+          "myip_rtc_read_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M14_ARESETN",
+          "myip_dht11_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M15_ARESETN",
+          "myip_sensor_adc_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M16_ARESETN",
+          "myip_sensor_dgt_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M17_ARESETN",
+          "myip_iic_txtlcd_0/s00_axi_aresetn",
           "microblaze_riscv_0_axi_periph/M18_ARESETN",
-          "myip_servo180_0/s00_axi_aresetn",
-          "myip_servo180_1/s00_axi_aresetn",
-          "myip_servo180_2/s00_axi_aresetn",
-          "myip_servo180_3/s00_axi_aresetn",
-          "myip_servo180_4/s00_axi_aresetn",
-          "myip_servo180_5/s00_axi_aresetn",
-          "myip_servo180_6/s00_axi_aresetn",
-          "myip_stepper_0/s00_axi_aresetn"
+          "axi_uartlite_0/s_axi_aresetn"
         ]
       },
       "reset_1": {
@@ -3424,112 +3418,112 @@
               },
               "SEG_myip_dht11_0_S00_AXI_reg": {
                 "address_block": "/myip_dht11_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A30000",
+                "offset": "0x44AC0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_fan_0_S00_AXI_reg": {
                 "address_block": "/myip_fan_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A70000",
+                "offset": "0x44A80000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_iic_txtlcd_0_S00_AXI_reg": {
                 "address_block": "/myip_iic_txtlcd_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A80000",
+                "offset": "0x44AF0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_rtc_read_0_S00_AXI_reg": {
                 "address_block": "/myip_rtc_read_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A20000",
+                "offset": "0x44AB0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_sensor_adc_0_S00_AXI_reg": {
                 "address_block": "/myip_sensor_adc_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A40000",
+                "offset": "0x44AD0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_sensor_dgt_0_S00_AXI_reg": {
                 "address_block": "/myip_sensor_dgt_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A50000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_0_S00_AXI_reg": {
-                "address_block": "/myip_servo180_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A90000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_1_S00_AXI_reg": {
-                "address_block": "/myip_servo180_1/S00_AXI/S00_AXI_reg",
-                "offset": "0x44AA0000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_2_S00_AXI_reg": {
-                "address_block": "/myip_servo180_2/S00_AXI/S00_AXI_reg",
-                "offset": "0x44AB0000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_3_S00_AXI_reg": {
-                "address_block": "/myip_servo180_3/S00_AXI/S00_AXI_reg",
-                "offset": "0x44AC0000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_4_S00_AXI_reg": {
-                "address_block": "/myip_servo180_4/S00_AXI/S00_AXI_reg",
-                "offset": "0x44AD0000",
-                "range": "64K",
-                "offset_base_param": "C_S00_AXI_BASEADDR",
-                "offset_high_param": "C_S00_AXI_HIGHADDR"
-              },
-              "SEG_myip_servo180_5_S00_AXI_reg": {
-                "address_block": "/myip_servo180_5/S00_AXI/S00_AXI_reg",
                 "offset": "0x44AE0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
-              "SEG_myip_servo180_6_S00_AXI_reg": {
-                "address_block": "/myip_servo180_6/S00_AXI/S00_AXI_reg",
-                "offset": "0x44AF0000",
+              "SEG_myip_servo_0_S00_AXI_reg": {
+                "address_block": "/myip_servo_0/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A00000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_1_S00_AXI_reg": {
+                "address_block": "/myip_servo_1/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A10000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_2_S00_AXI_reg": {
+                "address_block": "/myip_servo_2/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A20000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_3_S00_AXI_reg": {
+                "address_block": "/myip_servo_3/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A30000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_4_S00_AXI_reg": {
+                "address_block": "/myip_servo_4/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A40000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_5_S00_AXI_reg": {
+                "address_block": "/myip_servo_5/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A50000",
+                "range": "64K",
+                "offset_base_param": "C_S00_AXI_BASEADDR",
+                "offset_high_param": "C_S00_AXI_HIGHADDR"
+              },
+              "SEG_myip_servo_6_S00_AXI_reg": {
+                "address_block": "/myip_servo_6/S00_AXI/S00_AXI_reg",
+                "offset": "0x44A60000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_stepper_0_S00_AXI_reg": {
                 "address_block": "/myip_stepper_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A60000",
+                "offset": "0x44A70000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_ultrasonic_0_S00_AXI_reg": {
                 "address_block": "/myip_ultrasonic_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A00000",
+                "offset": "0x44A90000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"
               },
               "SEG_myip_ultrasonic_1_S00_AXI_reg": {
                 "address_block": "/myip_ultrasonic_1/S00_AXI/S00_AXI_reg",
-                "offset": "0x44A10000",
+                "offset": "0x44AA0000",
                 "range": "64K",
                 "offset_base_param": "C_S00_AXI_BASEADDR",
                 "offset_high_param": "C_S00_AXI_HIGHADDR"

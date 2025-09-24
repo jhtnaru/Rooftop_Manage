@@ -1,0 +1,57 @@
+axi_btn_gpio_0:
+- axi_gpio
+- gpio
+axi_uartlite_0:
+- axi_uartlite
+- uartlite
+microblaze_riscv_0_axi_intc:
+- axi_intc
+- intc
+myip_dht11_0:
+- myip_dht11
+- None
+myip_fan_0:
+- myip_fan
+- None
+myip_iic_txtlcd_0:
+- myip_iic_txtlcd
+- None
+myip_rtc_read_0:
+- myip_rtc_read
+- None
+myip_sensor_adc_0:
+- myip_sensor_adc
+- None
+myip_sensor_dgt_0:
+- myip_sensor_dgt
+- None
+myip_servo_0:
+- myip_servo
+- None
+myip_servo_1:
+- myip_servo
+- None
+myip_servo_2:
+- myip_servo
+- None
+myip_servo_3:
+- myip_servo
+- None
+myip_servo_4:
+- myip_servo
+- None
+myip_servo_5:
+- myip_servo
+- None
+myip_servo_6:
+- myip_servo
+- None
+myip_stepper_0:
+- myip_stepper
+- None
+myip_ultrasonic_0:
+- myip_ultrasonic
+- None
+myip_ultrasonic_1:
+- myip_ultrasonic
+- None

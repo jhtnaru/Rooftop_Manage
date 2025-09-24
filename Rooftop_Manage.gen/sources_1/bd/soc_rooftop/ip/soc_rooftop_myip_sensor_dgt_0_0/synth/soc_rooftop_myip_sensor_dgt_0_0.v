@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:myip_sensor_dgt:1.0
-// IP Revision: 2
+// IP Revision: 3
 
 (* X_CORE_INFO = "myip_sensor_dgt,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "soc_rooftop_myip_sensor_dgt_0_0,myip_sensor_dgt,{}" *)

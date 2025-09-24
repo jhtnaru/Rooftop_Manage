@@ -48,7 +48,7 @@
 
 
 // IP VLNV: user.org:user:myip_rtc_read:1.0
-// IP Revision: 2
+// IP Revision: 3
 
 (* X_CORE_INFO = "myip_rtc_read,Vivado 2024.2" *)
 (* CHECK_LICENSE_TYPE = "soc_rooftop_myip_rtc_read_0_0,myip_rtc_read,{}" *)
