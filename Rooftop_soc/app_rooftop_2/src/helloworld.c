@@ -150,7 +150,7 @@ int main () {
 
     stepper_inst[0] = 0b01000;
     stepper_inst[1] = 0;
-    stepper_inst[2] = 360;
+    stepper_inst[2] = 2160;
     stepper_inst[3] = 1;
 
     fan_inst[0] = 0b001;
@@ -179,6 +179,8 @@ int main () {
                     print("Stop\n");
                     servo_inst_0[0] = 0b10000;
                     servo_inst_1[0] = 0b10000;
+                    servo_inst_2[2] = 90;
+                    servo_inst_3[2] = 90;
                 }
             }
             else if (btn_value == 0b0010) {
@@ -216,51 +218,50 @@ int main () {
                 printf("%s\n",  ultra_sting_1);
                 ultra_dout_1 = 1;
             }
+        }
+        else if (servo_inst_0[3] % 10) {
+            ultra_dout_0 = 0;
+            ultra_dout_1 = 0;
+        }
 
-            if (servo_inst_1[3] == 40) {
-                adc_detect_0 = 0;
-                adc_detect_1 = 0;
-                adc_value_0 = 1200;
-                adc_value_1 = 3500;
+        if (servo_inst_1[3] == 40) {
+            adc_detect_0 = 0;
+            adc_detect_1 = 0;
+            adc_value_0 = 1200;
+            adc_value_1 = 3500;
+        }
+        else if (servo_inst_1[3] == 220 && adc_dout == 0) {
+            adc_dout = 1;
+            if (adc_detect_0) {
+                servo_inst_3[2] = adc_angle_0;
+                printf("Wind Power Angle %3d\n", adc_angle_0);
             }
-            else if (servo_inst_1[3] == 220 && adc_dout == 0) {
-                adc_dout = 1;
-                if (adc_detect_0) {
-                    servo_inst_3[2] = adc_angle_0;
-                    printf("Wind Power Angle %3d\n", adc_angle_0);
-                }
-                if (adc_detect_1) {
-                    servo_inst_2[2] = adc_angle_1;
-                    printf("Solar Power Angle %3d\n", adc_angle_1);
+            if (adc_detect_1) {
+                servo_inst_2[2] = adc_angle_1;
+                printf("Solar Power Angle %3d\n", adc_angle_1);
+            }
+        }
+        else if ((servo_inst_1[3] % 10) == 0 && adc_dout == 0) {
+            adc_dout = 1;
+            // printf("Servo1 %3d Sound %4d Photo %4d\n", servo_inst_1[3], sensor_adc_inst[0], sensor_adc_inst[1]);
+            if (sensor_adc_inst[0] < 1000) {
+                adc_detect_0 = 1;
+                if (adc_value_0 > sensor_adc_inst[0]) {
+                    adc_value_0 = sensor_adc_inst[0];
+                    adc_angle_0 = servo_inst_1[3] - 40;
+                    printf("Sound %4d Angle %3d\n", adc_value_0, adc_angle_0);
                 }
             }
-            else if ((servo_inst_1[3] % 10) == 0 && adc_dout == 0) {
-                adc_dout = 1;
-                // printf("Servo1 %3d Sound %4d Photo %4d\n", servo_inst_1[3], sensor_adc_inst[0], sensor_adc_inst[1]);
-                if (sensor_adc_inst[0] < 1000) {
-                    adc_detect_0 = 1;
-                    if (adc_value_0 > sensor_adc_inst[0]) {
-                        adc_value_0 = sensor_adc_inst[0];
-                        adc_angle_0 = servo_inst_1[3] - 40;
-                        printf("Sound %4d Angle %3d\n", adc_value_0, adc_angle_0);
-                    }
-                }
-                if (sensor_adc_inst[1] < 2000) {
-                    adc_detect_1 = 1;
-                    if (adc_value_1 > sensor_adc_inst[1]) {
-                        adc_value_1 = sensor_adc_inst[1];
-                        adc_angle_1 = servo_inst_1[3] - 40;
-                        printf("Photo %4d Angle %3d\n", adc_value_1, adc_angle_1);
-                    }
+            if (sensor_adc_inst[1] < 2000) {
+                adc_detect_1 = 1;
+                if (adc_value_1 > sensor_adc_inst[1]) {
+                    adc_value_1 = sensor_adc_inst[1];
+                    adc_angle_1 = servo_inst_1[3] - 40;
+                    printf("Photo %4d Angle %3d\n", adc_value_1, adc_angle_1);
                 }
             }
         }
-        else if (servo_inst_0[3] % 10) {
-            if (servo_inst_0[3] % 10 == 5) {
-                rtc_inst[0] = 0;
-            }
-            ultra_dout_0 = 0;
-            ultra_dout_1 = 0;
+        else if (servo_inst_1[3] % 10) {
             adc_dout = 0;
         }
 
@@ -283,7 +284,8 @@ int main () {
             stepper_inst[1] = 1;
         }
 
-        if ((servo_inst_0[3] % 10) == 0 && rtc_inst[9] == 0 && rtc_inst[0] == 0) rtc_inst[0] = 1;
+        if (rtc_inst[9] == 0 && rtc_inst[0] == 0) rtc_inst[0] = 1;
+        if (servo_inst_0[3] % 10 == 5) rtc_inst[0] = 0;
 
         sec   = bcd_to_dec(rtc_inst[1]);
         min   = bcd_to_dec(rtc_inst[2]);

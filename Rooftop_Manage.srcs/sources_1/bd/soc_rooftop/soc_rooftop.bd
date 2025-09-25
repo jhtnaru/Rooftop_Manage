@@ -3542,6 +3542,21 @@
           }
         }
       }
+    },
+    "elf_association": {
+      "file": {
+        "name": "../../imports/build/app_rooftop_2.elf",
+        "type": "ELF",
+        "checksum": "887465844",
+        "IsVisible": "1",
+        "ScopedToRef": "soc_rooftop",
+        "ScopedToCell": [
+          "microblaze_riscv_0"
+        ],
+        "UsedIn": [
+          "implementation"
+        ]
+      }
     }
   }
 }
